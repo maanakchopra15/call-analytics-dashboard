@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# Call Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React dashboard for exploring Call Detail Record (CDR) data. It summarizes call activity, duration, cost, outcomes, and recent call logs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- KPI cards for total calls, total call cost, average call duration, successful calls, and failed calls
+- Duration insights: longest, shortest, and average call duration
+- Cost by city chart and average cost per call
+- Calls-per-hour activity chart
+- Calls-by-city chart and city breakdown
+- Recent call logs with search and filters
+- Responsive layout for desktop and mobile screens
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Recharts
+- Lucide React
 
-## Expanding the Oxlint configuration
+## Data Source
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+The dashboard retrieves Call Detail Record data from:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+`https://69b30b45e224ec066bdb55a0.mockapi.io/api/v1/cdr`
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The API provides call details such as caller and receiver numbers, city, duration, cost, status, and start time.
+
+## Getting Started
+
+### Requirements
+
+- Node.js
+- npm
+
+### Install dependencies
+
+```bash
+npm install
