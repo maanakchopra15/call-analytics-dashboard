@@ -1,42 +1,30 @@
-# Call Analytics Dashboard
+# Call Analytics Platform — Week 3
 
-A React dashboard for exploring Call Detail Record (CDR) data. It summarizes call activity, duration, cost, outcomes, and recent call logs.
+Full-stack CDR analytics platform built for the Week 3 internship assignment.
 
-## Features
+## Stack
+- React + Vite + TypeScript
+- Vercel serverless API
+- JWT authentication
+- bcrypt password hashing
+- MockAPI CDR dataset
+- Admin and Analyst roles
+- Pagination and filters
 
-- KPI cards for total calls, total call cost, average call duration, successful calls, and failed calls
-- Duration insights: longest, shortest, and average call duration
-- Cost by city chart and average cost per call
-- Calls-per-hour activity chart
-- Calls-by-city chart and city breakdown
-- Recent call logs with search and filters
-- Responsive layout for desktop and mobile screens
+## Demo accounts
+Admin: admin / Admin123!
+Analyst: analyst / Analyst123!
 
-## Tech Stack
+## Vercel
+Import this GitHub repository into Vercel and deploy with the default Vite settings. No separate backend deployment is required because the API is inside /api.
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Recharts
-- Lucide React
+## API
+GET /api/health
+POST /api/auth/login
+POST /api/auth/signup
+POST /api/auth/logout
+GET /api/auth/me
+GET /api/analytics
+GET /api/cdr?page=1&limit=15&city=&caller=&receiver=
 
-## Data Source
-
-The dashboard retrieves Call Detail Record data from:
-
-`https://69b30b45e224ec066bdb55a0.mockapi.io/api/v1/cdr`
-
-The API provides call details such as caller and receiver numbers, city, duration, cost, status, and start time.
-
-## Getting Started
-
-### Requirements
-
-- Node.js
-- npm
-
-### Install dependencies
-
-```bash
-npm install
+The CDR endpoint is Admin-only. Analytics are available to Admin and Analyst users.
