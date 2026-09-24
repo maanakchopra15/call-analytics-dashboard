@@ -102,7 +102,8 @@ function filteredData(req) {
 
 export default async function handler(req, res) {
   try {
-    const path = new URL(req.url, "https://example.com").pathname.replace(/^\\/api\\/?/, "");
+    const requestUrl = new URL(req.url, "https://example.com");
+    const path = requestUrl.searchParams.get("route") || requestUrl.pathname.replace(/^\\/api\\/?/, "");
 
     if (req.method === "GET" && path === "health") {
       return send(res, 200, { status: "ok", records: cdrData.length, source: "assignment PDF dataset" });
