@@ -10,6 +10,16 @@ import part7 from "../data/cdr-part-07.json" with { type: "json" };
 import part8 from "../data/cdr-part-08.json" with { type: "json" };
 import part9 from "../data/cdr-part-09.json" with { type: "json" };
 import part10 from "../data/cdr-part-10.json" with { type: "json" };
+import part11 from "../data/cdr-part-11.json" with { type: "json" };
+import part12 from "../data/cdr-part-12.json" with { type: "json" };
+import part13 from "../data/cdr-part-13.json" with { type: "json" };
+import part14 from "../data/cdr-part-14.json" with { type: "json" };
+import part15 from "../data/cdr-part-15.json" with { type: "json" };
+import part16 from "../data/cdr-part-16.json" with { type: "json" };
+import part17 from "../data/cdr-part-17.json" with { type: "json" };
+import part18 from "../data/cdr-part-18.json" with { type: "json" };
+import part19 from "../data/cdr-part-19.json" with { type: "json" };
+import part20 from "../data/cdr-part-20.json" with { type: "json" };
 
 const SECRET = process.env.JWT_SECRET || "week3-call-analytics-demo-secret";
 const cdrData = [part1, part2, part3, part4, part5, part6, part7, part8, part9, part10, part11, part12, part13, part14, part15, part16, part17, part18, part19, part20].flat();
