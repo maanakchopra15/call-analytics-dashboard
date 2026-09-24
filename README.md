@@ -31,4 +31,4 @@ GET /api/cdr?page=1&limit=15&city=&caller=&receiver=&from=&to=
 
 The CDR endpoint is Admin-only. Analytics are available to Admin and Analyst users.
 
-The current deployed repository contains the first 500 records extracted from the supplied 10,000-record assignment PDF as a bundled serverless dataset.
+The deployed repository contains the 10,000-record CDR dataset extracted from the supplied assignment PDF as bundled serverless data.
