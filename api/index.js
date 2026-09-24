@@ -1,8 +1,18 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import cdrData from "../data/cdr-part-01.json" with { type: "json" };
+import part1 from "../data/cdr-part-01.json" with { type: "json" };
+import part2 from "../data/cdr-part-02.json" with { type: "json" };
+import part3 from "../data/cdr-part-03.json" with { type: "json" };
+import part4 from "../data/cdr-part-04.json" with { type: "json" };
+import part5 from "../data/cdr-part-05.json" with { type: "json" };
+import part6 from "../data/cdr-part-06.json" with { type: "json" };
+import part7 from "../data/cdr-part-07.json" with { type: "json" };
+import part8 from "../data/cdr-part-08.json" with { type: "json" };
+import part9 from "../data/cdr-part-09.json" with { type: "json" };
+import part10 from "../data/cdr-part-10.json" with { type: "json" };
 
 const SECRET = process.env.JWT_SECRET || "week3-call-analytics-demo-secret";
+const cdrData = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8, ...part9, ...part10];
 
 const users = globalThis.__cdrUsers || (globalThis.__cdrUsers = [
   { id: 1, username: "admin", role: "Admin", passwordHash: bcrypt.hashSync("Admin123!", 10) },
