@@ -12,7 +12,7 @@ import part9 from "../data/cdr-part-09.json" with { type: "json" };
 import part10 from "../data/cdr-part-10.json" with { type: "json" };
 
 const SECRET = process.env.JWT_SECRET || "week3-call-analytics-demo-secret";
-const cdrData = [...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7, ...part8, ...part9, ...part10];
+const cdrData = [part1, part2, part3, part4, part5, part6, part7, part8, part9, part10, part11, part12, part13, part14, part15, part16, part17, part18, part19, part20].flat();
 
 const users = globalThis.__cdrUsers || (globalThis.__cdrUsers = [
   { id: 1, username: "admin", role: "Admin", passwordHash: bcrypt.hashSync("Admin123!", 10) },
