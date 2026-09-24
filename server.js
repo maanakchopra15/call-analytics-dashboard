@@ -43,7 +43,8 @@ function tokenFor(user){return jwt.sign({id:user.id,username:user.username,role:
 function setToken(res,token){res.cookie("token",token,{httpOnly:true,secure:process.env.NODE_ENV==="production",sameSite:"lax",path:"/",maxAge:7200000})}
 function userFrom(req){
  try{
-  const raw=req.cookies?.token||req.headers.authorization?.replace(/^Bearer\s+/,"");
+  const cookie=(req.headers.cookie||"").split(";").map(x=>x.trim()).find(x=>x.startsWith("token="));
+  const raw=cookie?decodeURIComponent(cookie.slice(6)):req.headers.authorization?.replace(/^Bearer\s+/,"");
   return raw?jwt.verify(raw,SECRET):null;
  }catch{return null}
 }
